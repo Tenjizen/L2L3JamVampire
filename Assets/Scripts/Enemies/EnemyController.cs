@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public float Speed = 4;
+    //public float Speed = 4;
+    public EnemyScriptableObject EnemyValues;
 
     private GameObject _player;
     private Rigidbody2D _rb;
@@ -40,7 +41,7 @@ public class EnemyController : MonoBehaviour
         if (direction.sqrMagnitude > 0)
         {
             direction.Normalize();
-            _rb.velocity = direction * Speed;
+            _rb.velocity = direction * EnemyValues.MoveSpeed;
 
         }
         else

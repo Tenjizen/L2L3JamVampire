@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
 
     private float _timerCoolDown;
 
+    public Transform BulletParent;
+    public EnemyScriptableObject PlayerValues;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +37,7 @@ public class PlayerController : MonoBehaviour
             return;
 
         _timerCoolDown -= CoolDown;
-        GameObject go = GameObject.Instantiate(PrefabBullet, transform.position, Quaternion.identity);
+        GameObject go = GameObject.Instantiate(PrefabBullet, transform.position, Quaternion.identity, BulletParent);
 
         EnemyController enemy = MainGameplay.Instance.GetClosestEnemy(transform.position);
 
@@ -46,7 +48,6 @@ public class PlayerController : MonoBehaviour
 
             go.GetComponent<Bullet>().Initialize(direction);
         }
-
     }
 
     private void Move()
