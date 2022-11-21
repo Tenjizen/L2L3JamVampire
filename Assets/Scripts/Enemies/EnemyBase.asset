@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: EnemyBase
   m_EditorClassIdentifier: 
   Health: 20
-  MoveSpeed: 3
+  MoveSpeed: 1
   Damage: 5

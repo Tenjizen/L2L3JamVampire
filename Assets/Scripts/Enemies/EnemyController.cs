@@ -5,10 +5,12 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     //public float Speed = 4;
-    public EnemyScriptableObject EnemyValues;
+    public EnemyScriptableObject EnemyBaseValues;
 
     private GameObject _player;
     private Rigidbody2D _rb;
+
+    private int _health;
 
     private void Awake()
     {
@@ -18,7 +20,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _health = EnemyBaseValues.Health;
     }
 
     public void Initialize( GameObject player )
@@ -41,7 +43,7 @@ public class EnemyController : MonoBehaviour
         if (direction.sqrMagnitude > 0)
         {
             direction.Normalize();
-            _rb.velocity = direction * EnemyValues.MoveSpeed;
+            _rb.velocity = direction * EnemyBaseValues.MoveSpeed;
 
         }
         else
@@ -49,4 +51,10 @@ public class EnemyController : MonoBehaviour
             _rb.velocity = Vector2.zero;
         }
     }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "bullet")
+    //        _health -= quelquechose;
+    //}
 }

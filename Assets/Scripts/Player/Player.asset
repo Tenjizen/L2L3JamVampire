@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   Health: 100
-  MoveSpeed: 5
+  MoveSpeed: 6
   Damage: 0
