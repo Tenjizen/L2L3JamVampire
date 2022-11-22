@@ -52,9 +52,13 @@ public class MainGameplay : MonoBehaviour
 
         UpdateLevel();
     }
-    public void WinXP(EntitiesScriptableObject enemy)
+    public void WinXP(float exp)
     {
-        _exp += enemy.BonusExp;
+        _exp += exp;
+    }
+    public void WinScore(float score)
+    {
+        Score += score;
     }
     public void UpdateLevel()
     {

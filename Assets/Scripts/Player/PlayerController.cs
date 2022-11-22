@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
     public float CoolDownSecondShoot = 2.0f;
 
     public bool isAlive = true;
+    private bool _imunity = false;
+    public float ImunityTime = 0.5f;
+    private float _imunityTimer = 0;
 
 
     // Start is called before the first frame update
@@ -40,7 +43,20 @@ public class PlayerController : MonoBehaviour
             FirstShoot();
         SecondShoot();
         Die();
+        if (_imunity)
+            Imunitytimer();
         UpdateLife();
+    }
+
+    private void Imunitytimer()
+    {
+        _imunityTimer += Time.deltaTime;
+
+        if (_imunityTimer < ImunityTime)
+            return;
+
+        _imunityTimer -= ImunityTime;
+        _imunity = false;
     }
 
     private void FirstShoot()
@@ -84,7 +100,7 @@ public class PlayerController : MonoBehaviour
                 Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
 
-                if (hit.collider != null)
+                if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
                 {
                     GameObject go = GameObject.Instantiate(PrefabBullet, transform.position, Quaternion.identity, BulletParent);
                     go.GetComponent<Bullet>().Principal = false;
@@ -92,6 +108,7 @@ public class PlayerController : MonoBehaviour
                     EnemyController enemy = hit.collider.gameObject.GetComponent<EnemyController>();
 
                     Vector3 direction = enemy.transform.position - transform.position;
+
                     if (direction.sqrMagnitude > 0)
                     {
                         direction.Normalize();
@@ -141,8 +158,17 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             var enemy = collision.gameObject.GetComponent<EnemyController>();
-            _health -= enemy.EnemyBaseValues.Damage;
+            if (!_imunity)
+            {
+                _health -= enemy.EnemyBaseValues.Damage;
+                _imunity = true;
+            }
 
+            if (enemy.EnemyBaseValues.ILikeTrain)
+            {
+                GameObject.Destroy(enemy.gameObject);
+                MainGameplay.Instance.Enemies.Remove(enemy);
+            }
             Vector3 direction = enemy.transform.position - transform.position;
             enemy.BackOf(direction, 1);
         }

@@ -77,7 +77,8 @@ public class EnemyController : MonoBehaviour
                 GameObject loot = Instantiate(MainGameplay.Instance.Loot, this.transform.position, Quaternion.identity, MainGameplay.Instance.LootParent);
                 loot.GetComponent<EnemyController>().Initialize(MainGameplay.Instance.Player);
             }
-            MainGameplay.Instance.WinXP(EnemyBaseValues);
+            MainGameplay.Instance.WinXP(EnemyBaseValues.BonusExp);
+            MainGameplay.Instance.WinScore(EnemyBaseValues.BonusScore);
             MainGameplay.Instance.Enemies.Remove(this);
             GameObject.Destroy(gameObject, 0);
         }
