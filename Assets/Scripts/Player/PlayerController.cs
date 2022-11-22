@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public Slider SliderLife;
 
     public AnimatorScript Animator;
-    
+
     public float CoolDown = 0.2f;
     private float _timerCoolDownFirstShoot;
 
@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D _rb;
     public SpriteRenderer _spriteRenderer;
 
+    public bool CanShoot = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,9 +55,13 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Move();
-        if (MainGameplay.Instance.Enemies.Count > 0)
-            FirstShoot();
-        SecondShoot();
+
+        if (CanShoot)
+        {
+            if (MainGameplay.Instance.Enemies.Count > 0)
+                FirstShoot();
+            SecondShoot();
+        }
         Die();
         if (_imunity)
             Imunitytimer();
@@ -173,11 +179,11 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        if(horizontal > 0)
+        if (horizontal > 0)
         {
             _spriteRenderer.flipX = true;
         }
-        else if(horizontal < 0)
+        else if (horizontal < 0)
         {
             _spriteRenderer.flipX = false;
         }
@@ -209,6 +215,13 @@ public class PlayerController : MonoBehaviour
                 _spriteRenderer.color = Color.red;
                 StartCoroutine(ColorWhite());
             }
+            if (enemy.EnemyBaseValues.Name == "Enfant")
+            {
+                CanShoot = false;
+                StartCoroutine(timerCanShoot(1.0f));
+                GameObject.Destroy(enemy.gameObject);
+                MainGameplay.Instance.Enemies.Remove(enemy);
+            }
 
             if (enemy.EnemyBaseValues.ILikeTrain)
             {
@@ -219,6 +232,13 @@ public class PlayerController : MonoBehaviour
             enemy.BackOf(direction, 1);
         }
     }
+
+    IEnumerator timerCanShoot(float time)
+    {
+        yield return new WaitForSeconds(time);
+        CanShoot = true;
+    }
+
     public void LvlUp()
     {
         Time.timeScale = 1;

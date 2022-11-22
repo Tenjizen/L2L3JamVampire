@@ -11,7 +11,8 @@ public class EnemyController : MonoBehaviour
     public Slider SliderLife;
     private GameObject _player;
     private Rigidbody2D _rb;
-    private AnimatorControllerParameter _animation;
+
+    public AnimatorScript Animator;
 
     private float _timeForMove;
     private float _timerForMove;
@@ -29,15 +30,15 @@ public class EnemyController : MonoBehaviour
     private int _numberRush = 0;
     private float _health;
 
-    private SpriteRenderer _spriteRenderer;
+    //private SpriteRenderer _spriteRenderer;
 
     private bool _canLoot = true;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _animation = EnemyBaseValues.Animations[Random.Range(0, EnemyBaseValues.Animations.Count)]; 
+        //_spriteRenderer = GetComponent<SpriteRenderer>();
+        //_animation = EnemyBaseValues.Animations[Random.Range(0, EnemyBaseValues.Animations.Count)]; 
     }
 
     // Start is called before the first frame update
@@ -45,7 +46,7 @@ public class EnemyController : MonoBehaviour
     {
         _health = EnemyBaseValues.Health;
         _timeForMove = EnemyBaseValues.TimeForMove;
-        _spriteRenderer.sprite = EnemyBaseValues.Visuel;
+        //_spriteRenderer.sprite = EnemyBaseValues.Visuel;
         UpdateLife();
     }
 

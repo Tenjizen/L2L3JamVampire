@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: EnemyEnfant
   m_EditorClassIdentifier: 
   Name: Enfant
-  Health: 30
-  MoveSpeed: 5
-  Damage: 10
-  BonusScore: 500
-  BonusExp: 200
-  Visuel: {fileID: 21300000, guid: e3a4acaeca9627f4eb35f5b098343892, type: 3}
+  Health: 15
+  MoveSpeed: 15
+  Damage: 15
+  BonusScore: 700
+  BonusExp: 500
+  Visuel: {fileID: 21300000, guid: 69fdfe6d8e206134a83223383472ff48, type: 3}
   BonusLoot: {fileID: 0}
   ILikeTrain: 0
   TimeForMove: 0
