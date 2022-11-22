@@ -128,7 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ff5802a91b9824c92f7534e635ceae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemiesPrefab: []
+  EnemiesPrefab:
+  - {fileID: 7654918703708801626, guid: bc63bbf30f2977e4d9ed2c16afa08b56, type: 3}
   EnemiesParent: {fileID: 0}
   TimeSpawnNormal: 1
   TimeSpawnGroup: 5
@@ -146,9 +147,11 @@ GameObject:
   - component: {fileID: 5972753027238745607}
   - component: {fileID: 8580888707000828428}
   - component: {fileID: 6828276246516835449}
+  - component: {fileID: 401613624}
+  - component: {fileID: 401613623}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -238,3 +241,43 @@ MonoBehaviour:
   CoolDown: 0.5
   BulletParent: {fileID: 0}
   PlayerBaseValues: {fileID: 11400000, guid: fa4773a63d6811e4cb01b89a67ef5e23, type: 2}
+  NumberMaxAmmo: 2
+  NumberCurrentAmmo: 2
+  CoolDownSecondShoot: 2
+--- !u!50 &401613624
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3633932044844237191}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!70 &401613623
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3633932044844237191}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 1}
+  m_Direction: 0

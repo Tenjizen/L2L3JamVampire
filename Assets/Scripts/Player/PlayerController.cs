@@ -18,11 +18,13 @@ public class PlayerController : MonoBehaviour
     private int _health;
 
 
-    public int NumberMaxAmmo = 2;
+    [HideInInspector] public int NumberMaxAmmo = 2;
     public int NumberCurrentAmmo = 2;
     private bool _canUseSecondShoot = true;
     private float _timerCoolDownSecondShoot;
     public float CoolDownSecondShoot = 2.0f;
+
+    public bool isAlive = true;
     // Start is called before the first frame update
     void Start()
     {

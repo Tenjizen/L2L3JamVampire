@@ -9,6 +9,11 @@ public class MainGameplay : MonoBehaviour
     public GameObject Player;
     public List<EnemyController> Enemies;
 
+    public float TimerEnd; //en seconde pls, merci
+    private float _timerEnd;
+
+    private bool _playerAlive;
+
     private void Awake()
     {
         Instance = this;
@@ -17,7 +22,8 @@ public class MainGameplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        _timerEnd = TimerEnd;
+        _playerAlive = Player.GetComponent<PlayerController>().isAlive;
         foreach (var enemy in Enemies)
         {
             enemy.Initialize(Player);
@@ -28,10 +34,16 @@ public class MainGameplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (_timerEnd <= 0 && _playerAlive)
+        {
+            print("Win");
+            //ta perdu
+        }
+        else
+            _timerEnd -= Time.deltaTime;
     }
 
-    public EnemyController GetClosestEnemy( Vector3 position  )
+    public EnemyController GetClosestEnemy(Vector3 position)
     {
         float bestDistance = float.MaxValue;
         EnemyController bestEnemy = null;
@@ -42,7 +54,7 @@ public class MainGameplay : MonoBehaviour
 
             float distance = direction.sqrMagnitude;
 
-            if ( distance < bestDistance)
+            if (distance < bestDistance)
             {
                 bestDistance = distance;
                 bestEnemy = enemy;
@@ -50,5 +62,9 @@ public class MainGameplay : MonoBehaviour
         }
 
         return bestEnemy;
+    }
+    public bool PlayerIsAlive(bool die)
+    {
+        return _playerAlive = true;
     }
 }
