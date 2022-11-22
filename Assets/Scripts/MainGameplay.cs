@@ -13,6 +13,7 @@ public class MainGameplay : MonoBehaviour
     public Transform LootParent;
     public List<EnemyController> Enemies;
     public List<EnemyController> EnemiesTriggerCircle;
+    private EnemiesGenerator _enemiesGenerator;
 
     [SerializeField] List<int> _XPByLevel;
 
@@ -24,10 +25,9 @@ public class MainGameplay : MonoBehaviour
     public float Score = 0;
 
     private float _exp = 0;
-    float _globalExp = 0;
-    private int _level;
-    private int _levelUpgrade;
+    public int Level = 1;
 
+    public Image ImageFillAmout;
     public TextMeshProUGUI TimerText;
     public TextMeshProUGUI ScoreText;
     public TextMeshProUGUI AmmoText;
@@ -44,6 +44,7 @@ public class MainGameplay : MonoBehaviour
         UpdateText();
         _timerEnd = TimerEnd;
         _playerAlive = Player.GetComponent<PlayerController>().isAlive;
+        _enemiesGenerator = Player.GetComponent<EnemiesGenerator>();
         foreach (var enemy in Enemies)
         {
             enemy.Initialize(Player);
@@ -54,6 +55,7 @@ public class MainGameplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FillAmoutXPBarre();
         if (_timerEnd <= 0 && _playerAlive)
         {
             //print("Win");
@@ -61,13 +63,8 @@ public class MainGameplay : MonoBehaviour
         else
             _timerEnd -= Time.deltaTime;
 
-        print("lvl" + _level);
-        print(_levelUpgrade);
-
         UpdateLevel();
-        canvasLvlUp();
         UpdateText();
-        FillAmoutXPBarre();
     }
 
     private void UpdateText()
@@ -75,12 +72,11 @@ public class MainGameplay : MonoBehaviour
         TimerText.text = "" + Mathf.Round(_timerEnd * 100f) / 100f;
         ScoreText.text = "Score : " + Score;
         AmmoText.text = "" + Player.GetComponent<PlayerController>().NumberCurrentAmmo + " / " + Player.GetComponent<PlayerController>().NumberMaxAmmo;
-        LevelText.text = "LEVEL " + _levelUpgrade;
+        LevelText.text = "LEVEL " + Level;
     }
     public void WinXP(float exp)
     {
         _exp += exp;
-        _globalExp += exp;
     }
     public void WinScore(float score)
     {
@@ -90,24 +86,14 @@ public class MainGameplay : MonoBehaviour
 
     public void UpdateLevel()
     {
-        if (_exp >= _XPByLevel[_level] && _exp < _XPByLevel[_level + 1])
+        if (_exp >= _XPByLevel[Level - 1])
         {
-            _levelUpgrade = _level + 1;
+            Level++;
             _exp = 0;
-            print("coucou");
-            print(_XPByLevel[_level]);
-            print(_XPByLevel[_level + 1]);
-            print(_exp);
-        }
-    }
-    public void canvasLvlUp()
-    {
-        if (_level != _levelUpgrade && _levelUpgrade > 1)
-        {
-            _exp = 0;
-            _level = _levelUpgrade;
             Time.timeScale = 0f;
+            _enemiesGenerator.UpdateAllTimer();
             CanvasLvlUp.SetActive(true);
+            
         }
     }
     public EnemyController GetClosestEnemy(Vector3 position)
@@ -155,10 +141,10 @@ public class MainGameplay : MonoBehaviour
         return _playerAlive = true;
     }
 
-    public Image image;
     public void FillAmoutXPBarre()
     {
-        image.fillAmount = _exp / _XPByLevel[_levelUpgrade];
-        //image.fillAmount = _globalExp / _XPByLevel[_levelUpgrade];
+        if ((_exp / _XPByLevel[Level - 1]) > 1.0f)
+            ImageFillAmout.fillAmount = 1;
+        ImageFillAmout.fillAmount = (_exp / _XPByLevel[Level - 1]);
     }
 }

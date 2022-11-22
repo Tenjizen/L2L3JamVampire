@@ -17,10 +17,10 @@ public class EnemiesGenerator : MonoBehaviour
     private float _timer;
     private float _timerGroup;
     private float _timerReinhardt;
-    
+
     void Start()
     {
-    
+
     }
 
     void Update()
@@ -32,7 +32,12 @@ public class EnemiesGenerator : MonoBehaviour
         TimeReinhardt();
 
     }
-
+    public void UpdateAllTimer()
+    {
+        TimeSpawnNormal = TimeSpawnNormal * .05f;
+        TimeSpawnGroup = TimeSpawnGroup * .05f;
+        TimeSpawnReinhardt = TimeSpawnReinhardt * .05f;
+    }
     public void timeSpawn()
     {
         if (_timer > TimeSpawnNormal)
@@ -40,7 +45,7 @@ public class EnemiesGenerator : MonoBehaviour
             _timer -= TimeSpawnNormal;
             SpawnerEnemyBase(NumEnemies);
         }
-        else if(_timerGroup > TimeSpawnGroup)
+        else if (_timerGroup > TimeSpawnGroup)
         {
             _timerGroup -= TimeSpawnGroup;
             SpawnerEnemyBase(NumGroupEnemies);
@@ -71,7 +76,7 @@ public class EnemiesGenerator : MonoBehaviour
     public void SpawnerEnemyBase(int numberEnemies)
     {
         float RandomRayCircle = Random.Range(RayCircle, RayCircle + 3);
-        
+
         Vector3 center = transform.position;
         for (int i = 0; i < numberEnemies; i++)
         {
@@ -83,8 +88,8 @@ public class EnemiesGenerator : MonoBehaviour
     }
     public void SpawnerEnemyReinhardt(int numberEnemies)
     {
-        float RandomRayCircle = Random.Range(RayCircle+2, RayCircle + 5);
-        
+        float RandomRayCircle = Random.Range(RayCircle + 2, RayCircle + 5);
+
         Vector3 center = transform.position;
         for (int i = 0; i < numberEnemies; i++)
         {
