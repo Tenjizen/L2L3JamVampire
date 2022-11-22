@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
 
     public Transform BulletParent;
-    public EnemyScriptableObject PlayerBaseValues;
+    public EntitiesScriptableObject PlayerBaseValues;
 
     private int _health;
 

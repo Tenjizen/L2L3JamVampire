@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d546a7b198461b9488c3cac729ec4a7b, type: 3}
   m_Name: EnemyBase
   m_EditorClassIdentifier: 
+  Name: "\xC9tudiant"
   Health: 20
   MoveSpeed: 1
   Damage: 5
+  BonusScore: 100
+  Visuel: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  BonusLoot: {fileID: 0}

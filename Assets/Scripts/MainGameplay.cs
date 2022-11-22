@@ -9,10 +9,12 @@ public class MainGameplay : MonoBehaviour
     public GameObject Player;
     public List<EnemyController> Enemies;
 
-    public float TimerEnd; //en seconde pls, merci
+    public float TimerEnd; //en secondes pls, merci
     private float _timerEnd;
 
     private bool _playerAlive;
+
+    public float Score = 0;
 
     private void Awake()
     {

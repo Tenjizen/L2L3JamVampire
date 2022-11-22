@@ -59,10 +59,12 @@ public class EnemiesGenerator : MonoBehaviour
 
     public void SpawnerEnemyBase(int numberEnemies)
     {
+        float RandomRayCircle = Random.Range(RayCircle, RayCircle + 3);
+        
         Vector3 center = transform.position;
         for (int i = 0; i < numberEnemies; i++)
         {
-            Vector3 pos = RandomCircle(center, RayCircle);
+            Vector3 pos = RandomCircle(center, RandomRayCircle);
             GameObject spawned = Instantiate(EnemiesPrefab[0], pos, Quaternion.identity, EnemiesParent);
             spawned.GetComponent<EnemyController>().Initialize(MainGameplay.Instance.Player);
             MainGameplay.Instance.Enemies.Add(spawned.GetComponent<EnemyController>());

@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d546a7b198461b9488c3cac729ec4a7b, type: 3}
   m_Name: EnemyTrain
   m_EditorClassIdentifier: 
+  Name: Reinhardt
   Health: 20
   MoveSpeed: 6
   Damage: 5
+  BonusScore: 5000
+  Visuel: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
+  BonusLoot: {fileID: 7022405133105002457, guid: 7218260661e118941b4089a65719e106, type: 3}
+  ILikeTrain: 1
