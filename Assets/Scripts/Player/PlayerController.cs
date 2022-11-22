@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -28,6 +29,9 @@ public class PlayerController : MonoBehaviour
     public float ImunityTime = 0.5f;
     private float _imunityTimer = 0;
 
+    public float DamagePrincipal = 5;
+    public float DamageSecondaire = 20;
+    public float DamageKick = 15;
     Rigidbody2D _rb;
 
 
@@ -49,6 +53,10 @@ public class PlayerController : MonoBehaviour
         if (_imunity)
             Imunitytimer();
         UpdateLife();
+
+
+        if (Input.GetKeyDown(KeyCode.K))
+            BonusFireRat(0.10f);
     }
 
     private void Imunitytimer()
@@ -159,7 +167,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
@@ -180,7 +187,36 @@ public class PlayerController : MonoBehaviour
             enemy.BackOf(direction, 1);
         }
     }
+    public void LvlUp()
+    {
+        Time.timeScale = 1;
+        MainGameplay.Instance.CanvasLvlUp.SetActive(false);
 
+    }
+    public void BonusFireRat(float time)
+    {
+        LvlUp();
+        CoolDown -= CoolDown * time;
+    }
+    public void BonusAmmoSecondWeapon(int value)
+    {
+        LvlUp();
+        NumberMaxAmmo += value;
+    }
+    public void BonusLife(int value)
+    {
+        LvlUp();
+        _healthMax += value;
+        _health += value;
+    }
+    public void BonusDegats(int value)
+    {
+        LvlUp();
+        DamageKick += value;
+        DamagePrincipal += value;
+        DamageSecondaire += value;
+    }
+    
 
 
 }
