@@ -59,6 +59,7 @@ public class MainGameplay : MonoBehaviour
         if (_timerEnd <= 0 && _playerAlive)
         {
             //print("Win");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("VictoryScreen");
         }
         else
             _timerEnd -= Time.deltaTime;

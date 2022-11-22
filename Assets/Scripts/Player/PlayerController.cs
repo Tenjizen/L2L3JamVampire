@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -149,6 +150,7 @@ public class PlayerController : MonoBehaviour
         if (_health <= 0)
         {
             print("t'es nul");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("DefeatScreen");
         }
     }
 
