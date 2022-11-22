@@ -67,6 +67,10 @@ public class EnemyController : MonoBehaviour
             MoveToPlayer();
         }
 
+        if (_health <= 0)
+        {
+            GameObject.Destroy(gameObject, 0);
+        }
     }
 
     private void MoveToPlayer()
@@ -110,9 +114,15 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.tag == "bullet")
-    //        _health -= quelquechose;
-    //}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            if (collision.gameObject.GetComponent<Bullet>().Principal)
+                _health -= collision.gameObject.GetComponent<Bullet>().DamagePrincipal;
+            else
+                _health -= collision.gameObject.GetComponent<Bullet>().DamageSecond;
+            GameObject.Destroy(collision.gameObject, 0);
+        }
+    }
 }

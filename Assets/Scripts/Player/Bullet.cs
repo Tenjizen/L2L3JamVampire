@@ -5,6 +5,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float Speed = 10;
+    public int DamagePrincipal = 10;
+    public int DamageSecond = 10;
+    public bool Principal = true;
 
     private Vector3 _direction;
 
