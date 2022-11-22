@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class MainGameplay : MonoBehaviour
 {
     public static MainGameplay Instance;
@@ -59,6 +61,7 @@ public class MainGameplay : MonoBehaviour
         if (_timerEnd <= 0 && _playerAlive)
         {
             print("Win");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("VictoryScreen");
         }
         else
             _timerEnd -= Time.deltaTime;
