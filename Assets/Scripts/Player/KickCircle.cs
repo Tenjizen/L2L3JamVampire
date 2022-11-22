@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class KickCircle : MonoBehaviour
 {
+    PlayerController _playerController;
     public int Force;
-    public int Damage;
+    private int _damageKick;
     public float CoolDown = 4.0f;
     private float _coolDown = 0;
 
@@ -18,7 +19,8 @@ public class KickCircle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        _playerController = FindObjectOfType<PlayerController>();
+        _damageKick = (int)_playerController.DamageKick;
     }
 
     // Update is called once per frame
@@ -37,7 +39,7 @@ public class KickCircle : MonoBehaviour
                     {
                         direction.Normalize();
                         enemy.BackOf(direction, Force);
-                        enemy.Damage(Damage);
+                        enemy.Damage(_damageKick);
                         _state = State.cantKick;
                     }
                 }

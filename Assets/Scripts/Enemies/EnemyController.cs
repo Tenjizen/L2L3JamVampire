@@ -27,9 +27,14 @@ public class EnemyController : MonoBehaviour
     private int _health;
     private int _healthMax = 100;
 
+    private SpriteRenderer _spriteRenderer;
+
+    private bool _canLoot = true;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Start is called before the first frame update
@@ -37,6 +42,7 @@ public class EnemyController : MonoBehaviour
     {
         _health = EnemyBaseValues.Health;
         _timeForMove = EnemyBaseValues.TimeForMove;
+        _spriteRenderer.sprite = EnemyBaseValues.Visuel;
     }
 
     public void Initialize(GameObject player)
@@ -72,13 +78,13 @@ public class EnemyController : MonoBehaviour
 
         if (_health <= 0)
         {
-            if (EnemyBaseValues.ILikeTrain)
-            {
-                GameObject loot = Instantiate(MainGameplay.Instance.Loot, this.transform.position, Quaternion.identity, MainGameplay.Instance.LootParent);
-                loot.GetComponent<EnemyController>().Initialize(MainGameplay.Instance.Player);
-            }
             MainGameplay.Instance.WinXP(EnemyBaseValues.BonusExp);
             MainGameplay.Instance.WinScore(EnemyBaseValues.BonusScore);
+            if (EnemyBaseValues.ILikeTrain && _canLoot)
+            {
+                _canLoot = false;
+                Instantiate(MainGameplay.Instance.Loot, this.transform.position, Quaternion.identity, MainGameplay.Instance.LootParent);
+            }
             MainGameplay.Instance.Enemies.Remove(this);
             GameObject.Destroy(gameObject, 0);
         }
@@ -107,7 +113,7 @@ public class EnemyController : MonoBehaviour
 
     public void Damage(int damage)
     {
-            _health -= damage;
+        _health -= damage;
     }
 
 
@@ -130,7 +136,7 @@ public class EnemyController : MonoBehaviour
             if (_numberRush >= NumberRushMax)
             {
                 MainGameplay.Instance.Enemies.Remove(this);
-                GameObject.Destroy(gameObject, 0);            
+                GameObject.Destroy(gameObject, 0);
             }
         }
     }
