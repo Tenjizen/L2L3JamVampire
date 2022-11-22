@@ -1,0 +1,1234 @@
+fileFormatVersion: 2
+guid: 1612dd0cd5a1f5040ba401d14f78610a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tiles_murs_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3360
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e09a9b56b8279bb4cb744c85e9fc64b4
+      internalID: 1587141119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_1
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 3360
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea69a1a27abde50488e754653940c531
+      internalID: -756399838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_2
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 3360
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96e0764e8829aa040b7c56f8079b240d
+      internalID: -388441083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_3
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 3360
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df214166d520a7b4899da66496c878ea
+      internalID: -711155243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_4
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 3360
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9151d0d786a2af845a67ddc5f48660ac
+      internalID: 2145266867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_5
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 3360
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f81f49adea765e241849daf68c291abd
+      internalID: 1934090784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_6
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 3360
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51e185a80e48bad4cb3ffa74c1a499cc
+      internalID: -231354351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_7
+      rect:
+        serializedVersion: 2
+        x: 2940
+        y: 3360
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b4bcbf020e42ba489f2df0d128d3d4b
+      internalID: 1956257254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_8
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 3360
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8450924e43b3a7a4eb73d63bb2fae7a2
+      internalID: 1133208833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_9
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 3360
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71c063a13b8a3ae468be88614b10df6f
+      internalID: 878421010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2520
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f53d7f4848d87b34aa5ad95a48839cd2
+      internalID: 1235299529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_11
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 2520
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 781e794fe36b36c488f5e026e57fd8a1
+      internalID: -186996277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_12
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 2520
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9168d25b589e4624da4409fb5d01e213
+      internalID: -1143621796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_13
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 2520
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e95056843d40764fa7267a7ad1f7812
+      internalID: 884010077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_14
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 2520
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00136203467a227458ec3c84468a6408
+      internalID: 464408505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_15
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 2520
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e16c51bd0bf358044bcd588b8d19a93f
+      internalID: -572232614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_16
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 2520
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 751f80558844a654b8127a02e77e99e3
+      internalID: 267519202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_17
+      rect:
+        serializedVersion: 2
+        x: 2940
+        y: 2520
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ed0727ba22233b42aa7d46d210bfc58
+      internalID: -1109270431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_18
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 2520
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43c9d2fee428ae242a789214db1975d2
+      internalID: 1202790397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_19
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 2520
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 054f09bc3c85d674aa33c546768a2c01
+      internalID: -456259810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1680
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2e4e737636d4454093b2aa4997f5e96
+      internalID: -1941246179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_21
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 1680
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47f0816f12358b04e93560fbab673244
+      internalID: -1547334743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_22
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1680
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 788bdc6a3020c3b4dbac45b334437324
+      internalID: 907067074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_23
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1680
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f33aa3214823ad9488fdbfcc81db8de9
+      internalID: 1479408511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_24
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 1680
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8f09eefc3bdeff43b587d051bc02402
+      internalID: 188880544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_25
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1680
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4eededf04ea12a4aade0ee04daf53b3
+      internalID: -155854787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_26
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 1680
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38dd2b8593510c34d8db249fbc6a29f5
+      internalID: -303765052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_27
+      rect:
+        serializedVersion: 2
+        x: 2940
+        y: 1680
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d53c1b3d8de44d44bd177f02c07efa6
+      internalID: -1783136319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_28
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 1680
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fae0f5426124a142aa34dcbf8d5a2c6
+      internalID: 478524010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_29
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 1680
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c06928481031ebf42b912fa04e9db32f
+      internalID: -788080597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c6e95f57c6ea9a4eb1dfa1ad5bb98d8
+      internalID: -1073036804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_31
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 840
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd89b256d66741d479f9b5b586fcd6b1
+      internalID: 38681823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_32
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 840
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe358b62d915fb143a666acd82137c49
+      internalID: 995059049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_33
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 840
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bce26a662c7a79f40aa2162d8a8ddeba
+      internalID: 105946589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_34
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 840
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ca43ce3301287040a72d692d03a652a
+      internalID: 288885033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_35
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 840
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e43e6ffd480a96743b0e497b063ce1a9
+      internalID: -1257668155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_36
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 840
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38ae2ad1c37c1374e819a3f5af968c1f
+      internalID: -1898273177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_37
+      rect:
+        serializedVersion: 2
+        x: 2940
+        y: 840
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0772e9d4ef2b67c4f8a8390920497120
+      internalID: 1574367143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_38
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 840
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f484e86f55764b14e93e13cea7d0aeb8
+      internalID: -1071592646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_39
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 840
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc6822b68337cd4194e3b39103b5345
+      internalID: 1368897497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ada79e28cf4bf540a36cee169ca9bb5
+      internalID: 1743699601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_41
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a1e0c3c1f91e634a80803e33d32feab
+      internalID: 1227410480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_42
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 0
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0c2a91aaf23484f9607a7369fd4d6c
+      internalID: -1833595108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_43
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 0
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd29ec0cd5317d49a79d067519ffebe
+      internalID: -1327479312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_44
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 0
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 714e2b9c36d3dc04c8981d880346b9a2
+      internalID: 671883108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_45
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 0
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c59d6a3869ed24b996a3e98855b5e9
+      internalID: -1607166909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_46
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 0
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f3701c3ac14d841b6ea07c191153bd
+      internalID: -1265843274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_47
+      rect:
+        serializedVersion: 2
+        x: 2940
+        y: 0
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 196e322c3e512d447992cc21a77fde22
+      internalID: 1750484743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_48
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 0
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cee00374dcbbef458211b17d75a21a5
+      internalID: 628426780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_murs_49
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 0
+        width: 420
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df2dc2ec7e8c5dd4c80532c939b891a4
+      internalID: -1371954511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      tiles_murs_38: -1071592646
+      tiles_murs_6: -231354351
+      tiles_murs_10: 1235299529
+      tiles_murs_2: -388441083
+      tiles_murs_25: -155854787
+      tiles_murs_48: 628426780
+      tiles_murs_15: -572232614
+      tiles_murs_35: -1257668155
+      tiles_murs_5: 1934090784
+      tiles_murs_12: -1143621796
+      tiles_murs_3: -711155243
+      tiles_murs_41: 1227410480
+      tiles_murs_1: -756399838
+      tiles_murs_46: -1265843274
+      tiles_murs_17: -1109270431
+      tiles_murs_11: -186996277
+      tiles_murs_44: 671883108
+      tiles_murs_23: 1479408511
+      tiles_murs_13: 884010077
+      tiles_murs_7: 1956257254
+      tiles_murs_39: 1368897497
+      tiles_murs_37: 1574367143
+      tiles_murs_45: -1607166909
+      tiles_murs_30: -1073036804
+      tiles_murs_36: -1898273177
+      tiles_murs_22: 907067074
+      tiles_murs_9: 878421010
+      tiles_murs_18: 1202790397
+      tiles_murs_29: -788080597
+      tiles_murs_8: 1133208833
+      tiles_murs_49: -1371954511
+      tiles_murs_21: -1547334743
+      tiles_murs_31: 38681823
+      tiles_murs_43: -1327479312
+      tiles_murs_32: 995059049
+      tiles_murs_14: 464408505
+      tiles_murs_16: 267519202
+      tiles_murs_19: -456259810
+      tiles_murs_47: 1750484743
+      tiles_murs_20: -1941246179
+      tiles_murs_42: -1833595108
+      tiles_murs_4: 2145266867
+      tiles_murs_27: -1783136319
+      tiles_murs_34: 288885033
+      tiles_murs_26: -303765052
+      tiles_murs_28: 478524010
+      tiles_murs_0: 1587141119
+      tiles_murs_33: 105946589
+      tiles_murs_24: 188880544
+      tiles_murs_40: 1743699601
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
