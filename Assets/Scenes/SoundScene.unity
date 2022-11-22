@@ -217,6 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 871563846}
   - component: {fileID: 871563845}
+  - component: {fileID: 871563847}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -335,3 +336,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &871563847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871563844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f916f5095ffb21d44ac62acdfa7b1335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Clips:
+  - {fileID: 8300000, guid: 4868b61976dd059498915301b12dccfe, type: 3}
+  - {fileID: 8300000, guid: 12f4bfc81c2311d47871e2ed36046ae0, type: 3}
+  - {fileID: 8300000, guid: e445e8dac18fe554384116f2b093571b, type: 3}
+  - {fileID: 8300000, guid: adba5cb3ec147254b993020fc874baa7, type: 3}
+  - {fileID: 8300000, guid: f5a88c07497d1b84d99e1a6b01958852, type: 3}
+  - {fileID: 8300000, guid: 3f829cb8ecf8f0048b05967eac729cd2, type: 3}
+  - {fileID: 8300000, guid: a6fbfc0067ecf9a4997c41478fc80d7a, type: 3}
+  - {fileID: 8300000, guid: 11a698513c71a4d479538a6e0de57eae, type: 3}

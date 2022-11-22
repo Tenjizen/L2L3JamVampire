@@ -29,7 +29,7 @@ public class KickCircle : MonoBehaviour
         if (_state == State.canKick)
         {
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (MainGameplay.Instance.EnemiesTriggerCircle.Count >= 1)
                 {
