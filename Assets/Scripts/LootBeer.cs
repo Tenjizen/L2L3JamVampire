@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LootBeer : MonoBehaviour
 {
+    public int BonusLife = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,13 @@ public class LootBeer : MonoBehaviour
     void Update()
     {
         
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            collision.GetComponent<PlayerController>().AddHealth(BonusLife);
+            GameObject.Destroy(gameObject, 0);
+        }
     }
 }

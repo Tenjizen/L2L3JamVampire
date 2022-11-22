@@ -8,9 +8,11 @@ public class EntitiesScriptableObject : ScriptableObject
     public string Name;
     public int Health;
     public int MoveSpeed;
-    public int BaseDamage;
+    public int Damage;
     public float BonusScore;
+    public float BonusExp;
     public Sprite Visuel;
     public GameObject BonusLoot;
     public bool ILikeTrain = false;
+    public float TimeForMove;
 }

@@ -10,10 +10,10 @@ public class EnemyController : MonoBehaviour
     private GameObject _player;
     private Rigidbody2D _rb;
 
-    public float TimeForMove; //remonte
-    private float _timeForMove; //remonte
+    private float _timeForMove;
+    private float _timerForMove;
     private Vector3 TargetPos;
-    
+
     enum State
     {
         Waiting,
@@ -22,8 +22,10 @@ public class EnemyController : MonoBehaviour
 
     State _state = State.Waiting;
 
-
+    public int NumberRushMax = 3;
+    private int _numberRush = 0;
     private int _health;
+    private int _healthMax = 100;
 
     private void Awake()
     {
@@ -34,6 +36,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         _health = EnemyBaseValues.Health;
+        _timeForMove = EnemyBaseValues.TimeForMove;
     }
 
     public void Initialize(GameObject player)
@@ -47,13 +50,13 @@ public class EnemyController : MonoBehaviour
     {
         if (_state == State.Waiting)
         {
-            _timeForMove += Time.deltaTime;
+            _timerForMove += Time.deltaTime;
 
-            if (_timeForMove >= TimeForMove)
+            if (_timerForMove >= _timeForMove)
             {
                 TargetPos = _player.transform.position;
                 TargetPos.z = 0;
-                _timeForMove -= TimeForMove;
+                _timerForMove -= _timeForMove;
                 _state = State.Moving;
             }
         }
@@ -69,6 +72,12 @@ public class EnemyController : MonoBehaviour
 
         if (_health <= 0)
         {
+            if (EnemyBaseValues.ILikeTrain)
+            {
+                GameObject loot = Instantiate(MainGameplay.Instance.Loot, this.transform.position, Quaternion.identity, MainGameplay.Instance.LootParent);
+                loot.GetComponent<EnemyController>().Initialize(MainGameplay.Instance.Player);
+            }
+            MainGameplay.Instance.WinXP(EnemyBaseValues);
             MainGameplay.Instance.Enemies.Remove(this);
             GameObject.Destroy(gameObject, 0);
         }
@@ -95,9 +104,9 @@ public class EnemyController : MonoBehaviour
         transform.position += direction * force;
     }
 
-public void Damage(int damage)
+    public void Damage(int damage)
     {
-        _health -= damage;
+            _health -= damage;
     }
 
 
@@ -116,6 +125,12 @@ public void Damage(int damage)
         {
             _rb.velocity = Vector2.zero;
             _state = State.Waiting;
+            _numberRush++;
+            if (_numberRush >= NumberRushMax)
+            {
+                MainGameplay.Instance.Enemies.Remove(this);
+                GameObject.Destroy(gameObject, 0);            
+            }
         }
     }
 
@@ -128,6 +143,7 @@ public void Damage(int damage)
                 _health -= bullet.DamagePrincipal;
             else
                 _health -= bullet.DamageSecond;
+
             GameObject.Destroy(collision.gameObject, 0);
         }
     }

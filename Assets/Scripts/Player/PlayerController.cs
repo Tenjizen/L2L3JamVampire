@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public EntitiesScriptableObject PlayerBaseValues;
 
     private int _health;
+    private int _healthMax = 100;
+
 
     [HideInInspector] public int NumberMaxAmmo = 2;
     public int NumberCurrentAmmo = 2;
@@ -34,8 +36,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Move();
-        FirstShoot();
+        if (MainGameplay.Instance.Enemies.Count > 0)
+            FirstShoot();
         SecondShoot();
+        Die();
+        UpdateLife();
     }
 
     private void FirstShoot()
@@ -48,9 +53,11 @@ public class PlayerController : MonoBehaviour
         _timerCoolDownFirstShoot -= CoolDown;
         GameObject go = GameObject.Instantiate(PrefabBullet, transform.position, Quaternion.identity, BulletParent);
         go.GetComponent<Bullet>().Principal = true;
+
         EnemyController enemy = MainGameplay.Instance.GetClosestEnemy(transform.position);
 
         Vector3 direction = enemy.transform.position - transform.position;
+
         if (direction.sqrMagnitude > 0)
         {
             direction.Normalize();
@@ -79,7 +86,6 @@ public class PlayerController : MonoBehaviour
 
                 if (hit.collider != null)
                 {
-                    //Debug.Log(hit.collider.name);
                     GameObject go = GameObject.Instantiate(PrefabBullet, transform.position, Quaternion.identity, BulletParent);
                     go.GetComponent<Bullet>().Principal = false;
 
@@ -97,6 +103,23 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    public void AddHealth(int life)
+    {
+        if (_health <= _healthMax)
+            _health += life;
+    }
+    public void UpdateLife()
+    {
+        if (_health > _healthMax)
+            _health = _healthMax;
+    }
+    private void Die()
+    {
+        if (_health <= 0)
+        {
+            print("t'es nul");
+        }
+    }
 
     private void Move()
     {
@@ -111,4 +134,20 @@ public class PlayerController : MonoBehaviour
             transform.position += direction * PlayerBaseValues.MoveSpeed * Time.deltaTime;
         }
     }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            var enemy = collision.gameObject.GetComponent<EnemyController>();
+            _health -= enemy.EnemyBaseValues.Damage;
+
+            Vector3 direction = enemy.transform.position - transform.position;
+            enemy.BackOf(direction, 1);
+        }
+    }
+
+
+
 }

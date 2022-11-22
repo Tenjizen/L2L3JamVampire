@@ -17,5 +17,8 @@ MonoBehaviour:
   MoveSpeed: 1
   Damage: 5
   BonusScore: 100
+  BonusExp: 50
   Visuel: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   BonusLoot: {fileID: 0}
+  ILikeTrain: 0
+  TimeForMove: 0
