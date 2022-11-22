@@ -69,6 +69,7 @@ public class EnemyController : MonoBehaviour
 
         if (_health <= 0)
         {
+            MainGameplay.Instance.Enemies.Remove(this);
             GameObject.Destroy(gameObject, 0);
         }
     }
@@ -89,9 +90,14 @@ public class EnemyController : MonoBehaviour
             _rb.velocity = Vector2.zero;
         }
     }
-    public void BackOf(Vector3 direction)
+    public void BackOf(Vector3 direction, int force)
     {
-        //_direction = direction;
+        transform.position += direction * force;
+    }
+
+public void Damage(int damage)
+    {
+        _health -= damage;
     }
 
 
@@ -101,7 +107,6 @@ public class EnemyController : MonoBehaviour
         direction.z = 0;
 
 
-        print(TargetPos.magnitude);
         if (direction.magnitude > 0.2f)
         {
             direction.Normalize();
@@ -116,12 +121,13 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        var bullet = collision.gameObject.GetComponent<Bullet>();
         if (collision.gameObject.tag == "Bullet")
         {
-            if (collision.gameObject.GetComponent<Bullet>().Principal)
-                _health -= collision.gameObject.GetComponent<Bullet>().DamagePrincipal;
+            if (bullet.Principal)
+                _health -= bullet.DamagePrincipal;
             else
-                _health -= collision.gameObject.GetComponent<Bullet>().DamageSecond;
+                _health -= bullet.DamageSecond;
             GameObject.Destroy(collision.gameObject, 0);
         }
     }

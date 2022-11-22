@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3079708805368454866}
   - component: {fileID: 6080528422081065807}
   - component: {fileID: 1803926038212694397}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 10
   DamagePrincipal: 10
-  DamageSecond: 10
+  DamageSecond: 20
   Principal: 1
 --- !u!50 &6080528422081065807
 Rigidbody2D:

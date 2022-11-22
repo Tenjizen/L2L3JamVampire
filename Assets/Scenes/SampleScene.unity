@@ -141,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 162830682666279144, guid: bc63bbf30f2977e4d9ed2c16afa08b56, type: 3}
       propertyPath: EnemyBaseValues
       value: 
-      objectReference: {fileID: 11400000, guid: e4854a4678bfb2648aaeee2ad62b8034, type: 2}
+      objectReference: {fileID: 11400000, guid: 85e3ceac7c7b49e48ba0c2e137587a7c, type: 2}
     - target: {fileID: 4496988910612091953, guid: bc63bbf30f2977e4d9ed2c16afa08b56, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -241,6 +241,7 @@ MonoBehaviour:
   Enemies:
   - {fileID: 1931475071}
   - {fileID: 117166427}
+  EnemiesTriggerCircle: []
   TimerEnd: 5
   Score: 0
 --- !u!4 &133957340
@@ -346,7 +347,7 @@ GameObject:
   - component: {fileID: 876589684}
   - component: {fileID: 876589686}
   - component: {fileID: 876589685}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66d734b3c4ea9641858816f289cc0f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemiesTrigger: []
+  Force: 2
+  Damage: 5
 --- !u!58 &876589686
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -619,21 +621,33 @@ PrefabInstance:
       propertyPath: m_LinearDrag
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 519420028, guid: 2c3987bd5113f804c9f3a7f0394753f7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963381725, guid: 2c3987bd5113f804c9f3a7f0394753f7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1963381727, guid: 2c3987bd5113f804c9f3a7f0394753f7, type: 3}
       propertyPath: EnemiesParent
       value: 
       objectReference: {fileID: 1640574925}
     - target: {fileID: 1963381727, guid: 2c3987bd5113f804c9f3a7f0394753f7, type: 3}
       propertyPath: TimeSpawnGroup
-      value: 550
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1963381727, guid: 2c3987bd5113f804c9f3a7f0394753f7, type: 3}
       propertyPath: TimeSpawnNormal
-      value: 150
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3633932044844237191, guid: 2c3987bd5113f804c9f3a7f0394753f7, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3633932044844237191, guid: 2c3987bd5113f804c9f3a7f0394753f7, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5972753027238745607, guid: 2c3987bd5113f804c9f3a7f0394753f7, type: 3}
       propertyPath: m_RootOrder
@@ -678,6 +692,10 @@ PrefabInstance:
     - target: {fileID: 5972753027238745607, guid: 2c3987bd5113f804c9f3a7f0394753f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828276246516835449, guid: 2c3987bd5113f804c9f3a7f0394753f7, type: 3}
+      propertyPath: CoolDown
+      value: 4.87
       objectReference: {fileID: 0}
     - target: {fileID: 6828276246516835449, guid: 2c3987bd5113f804c9f3a7f0394753f7, type: 3}
       propertyPath: BulletParent
@@ -870,7 +888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654918703708801626, guid: bc63bbf30f2977e4d9ed2c16afa08b56, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc63bbf30f2977e4d9ed2c16afa08b56, type: 3}

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Reinhardt
   Health: 20
-  MoveSpeed: 6
-  Damage: 5
+  MoveSpeed: 15
+  BaseDamage: 0
   BonusScore: 5000
   Visuel: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
   BonusLoot: {fileID: 7022405133105002457, guid: 7218260661e118941b4089a65719e106, type: 3}

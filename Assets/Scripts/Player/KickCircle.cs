@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class KickCircle : MonoBehaviour
 {
-    public List<EnemyController> EnemiesTrigger;
+    public int Force;
+    public int Damage;
+    public float CoolDown = 4.0f;
+    private float _coolDown = 0;
 
-
+    enum State
+    {
+        canKick,
+        cantKick
+    }
+    State _state = State.canKick;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,19 +24,35 @@ public class KickCircle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (_state == State.canKick)
         {
-            if (EnemiesTrigger != null)
+
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                EnemyController enemy = MainGameplay.Instance.KickClosestEnemy(transform.position);
-
-                Vector3 direction = enemy.transform.position - transform.position;
-                if (direction.sqrMagnitude > 0)
+                if (MainGameplay.Instance.EnemiesTriggerCircle.Count >= 1)
                 {
-                    direction.Normalize();
+                    EnemyController enemy = MainGameplay.Instance.KickClosestEnemy(transform.position);
+                    Vector3 direction = enemy.transform.position - transform.position;
+                    if (direction.sqrMagnitude > 0)
+                    {
+                        direction.Normalize();
+                        enemy.BackOf(direction, Force);
+                        enemy.Damage(Damage);
+                        _state = State.cantKick;
+                    }
                 }
-            }
 
+            }
+        }
+        if (_state == State.cantKick)
+        {
+            _coolDown += Time.deltaTime;
+
+            if (_coolDown > CoolDown)
+            {
+                _coolDown -= CoolDown;
+                _state = State.canKick;
+            }
         }
 
     }
@@ -37,12 +61,12 @@ public class KickCircle : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            EnemiesTrigger.Add(collision.GetComponent<EnemyController>());
+            MainGameplay.Instance.EnemiesTriggerCircle.Add(collision.GetComponent<EnemyController>());
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        EnemiesTrigger.Remove(collision.GetComponent<EnemyController>());
+        MainGameplay.Instance.EnemiesTriggerCircle.Remove(collision.GetComponent<EnemyController>());
     }
 
 }

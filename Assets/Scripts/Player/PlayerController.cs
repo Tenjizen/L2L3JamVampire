@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour
     public float CoolDownSecondShoot = 2.0f;
 
     public bool isAlive = true;
-    
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
         _timerCoolDownFirstShoot -= CoolDown;
         GameObject go = GameObject.Instantiate(PrefabBullet, transform.position, Quaternion.identity, BulletParent);
-
+        go.GetComponent<Bullet>().Principal = true;
         EnemyController enemy = MainGameplay.Instance.GetClosestEnemy(transform.position);
 
         Vector3 direction = enemy.transform.position - transform.position;
@@ -81,6 +81,7 @@ public class PlayerController : MonoBehaviour
                 {
                     //Debug.Log(hit.collider.name);
                     GameObject go = GameObject.Instantiate(PrefabBullet, transform.position, Quaternion.identity, BulletParent);
+                    go.GetComponent<Bullet>().Principal = false;
 
                     EnemyController enemy = hit.collider.gameObject.GetComponent<EnemyController>();
 
