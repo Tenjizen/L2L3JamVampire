@@ -28,10 +28,13 @@ public class PlayerController : MonoBehaviour
     public float ImunityTime = 0.5f;
     private float _imunityTimer = 0;
 
+    Rigidbody2D _rb;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        _rb = GetComponent<Rigidbody2D>();
         _health = PlayerBaseValues.Health;
     }
 
@@ -148,7 +151,11 @@ public class PlayerController : MonoBehaviour
         if (direction.sqrMagnitude > 0)
         {
             direction.Normalize();
-            transform.position += direction * PlayerBaseValues.MoveSpeed * Time.deltaTime;
+            _rb.velocity = direction * PlayerBaseValues.MoveSpeed;
+        }
+        else
+        {
+            _rb.velocity = Vector2.zero;
         }
     }
 
