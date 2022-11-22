@@ -8,7 +8,7 @@ public class EntitiesScriptableObject : ScriptableObject
     public string Name;
     public int Health;
     public int MoveSpeed;
-    public int Damage;
+    public int BaseDamage;
     public float BonusScore;
     public Sprite Visuel;
     public GameObject BonusLoot;

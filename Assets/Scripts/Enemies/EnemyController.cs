@@ -12,14 +12,15 @@ public class EnemyController : MonoBehaviour
 
     public float TimeForMove; //remonte
     private float _timeForMove; //remonte
-    private Vector3 TargetDirection;
-    //enum State
-    //{
-    //    Waiting,
-    //    Moving
-    //}
+    private Vector3 TargetPos;
+    
+    enum State
+    {
+        Waiting,
+        Moving
+    }
 
-    //State _state = State.Waiting;
+    State _state = State.Waiting;
 
 
     private int _health;
@@ -44,22 +45,22 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (_state == State.Waiting)
-        //{
-        //    _timeForMove += Time.deltaTime;
+        if (_state == State.Waiting)
+        {
+            _timeForMove += Time.deltaTime;
 
-        //    if (_timeForMove >= TimeForMove)
-        //    {
-        //        TargetDirection = _player.transform.position - transform.position;
-        //        TargetDirection.z = 0;
-        //        _timeForMove -= TimeForMove;
-        //        _state = State.Moving;
-        //    }
-        //}
-        //if (_state == State.Moving)
-        //{
-        //    ILikeTrainAgain();
-        //}
+            if (_timeForMove >= TimeForMove)
+            {
+                TargetPos = _player.transform.position;
+                TargetPos.z = 0;
+                _timeForMove -= TimeForMove;
+                _state = State.Moving;
+            }
+        }
+        if (_state == State.Moving)
+        {
+            ILikeTrainAgain();
+        }
 
         if (!EnemyBaseValues.ILikeTrain)
         {
@@ -84,21 +85,30 @@ public class EnemyController : MonoBehaviour
             _rb.velocity = Vector2.zero;
         }
     }
+    public void BackOf(Vector3 direction)
+    {
+        //_direction = direction;
+    }
 
-    //private void ILikeTrainAgain()
-    //{
-    //    print(TargetDirection.magnitude);   
-    //    if (TargetDirection.magnitude > 0.1f)
-    //    {
-    //        TargetDirection.Normalize();
-    //        _rb.velocity = TargetDirection * EnemyBaseValues.MoveSpeed;
-    //    }
-    //    else
-    //    {
-    //        _rb.velocity = Vector2.zero;
-    //        _state = State.Waiting;
-    //    }
-    //}
+
+    private void ILikeTrainAgain()
+    {
+        Vector3 direction = TargetPos - transform.position;
+        direction.z = 0;
+
+
+        print(TargetPos.magnitude);
+        if (direction.magnitude > 0.2f)
+        {
+            direction.Normalize();
+            _rb.velocity = direction * EnemyBaseValues.MoveSpeed;
+        }
+        else
+        {
+            _rb.velocity = Vector2.zero;
+            _state = State.Waiting;
+        }
+    }
 
     //private void OnCollisionEnter(Collision collision)
     //{

@@ -8,6 +8,7 @@ public class MainGameplay : MonoBehaviour
 
     public GameObject Player;
     public List<EnemyController> Enemies;
+    public List<EnemyController> EnemiesTriggerCircle;
 
     public float TimerEnd; //en secondes pls, merci
     private float _timerEnd;
@@ -50,6 +51,26 @@ public class MainGameplay : MonoBehaviour
         EnemyController bestEnemy = null;
 
         foreach (var enemy in Enemies)
+        {
+            Vector3 direction = enemy.transform.position - position;
+
+            float distance = direction.sqrMagnitude;
+
+            if (distance < bestDistance)
+            {
+                bestDistance = distance;
+                bestEnemy = enemy;
+            }
+        }
+
+        return bestEnemy;
+    }
+    public EnemyController KickClosestEnemy(Vector3 position)
+    {
+        float bestDistance = float.MaxValue;
+        EnemyController bestEnemy = null;
+
+        foreach (var enemy in EnemiesTriggerCircle)
         {
             Vector3 direction = enemy.transform.position - position;
 
