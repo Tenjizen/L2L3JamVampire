@@ -44,7 +44,7 @@ public class MainGameplay : MonoBehaviour
         UpdateText();
         _timerEnd = TimerEnd;
         _playerAlive = Player.GetComponent<PlayerController>().isAlive;
-        _enemiesGenerator = Player.GetComponent<EnemiesGenerator>();
+        _enemiesGenerator = FindObjectOfType<EnemiesGenerator>();
         foreach (var enemy in Enemies)
         {
             enemy.Initialize(Player);

@@ -34,9 +34,9 @@ public class EnemiesGenerator : MonoBehaviour
     }
     public void UpdateAllTimer()
     {
-        TimeSpawnNormal = TimeSpawnNormal * .05f;
-        TimeSpawnGroup = TimeSpawnGroup * .05f;
-        TimeSpawnReinhardt = TimeSpawnReinhardt * .05f;
+        TimeSpawnNormal -= TimeSpawnNormal* .05f;
+        TimeSpawnGroup -= TimeSpawnGroup * .05f;
+        TimeSpawnReinhardt -= TimeSpawnReinhardt * .05f;
     }
     public void timeSpawn()
     {

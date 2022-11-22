@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public GameObject PrefabBullet;
+    public Slider SliderLife;
 
     public float CoolDown = 0.2f;
     private float _timerCoolDownFirstShoot;
@@ -14,8 +15,8 @@ public class PlayerController : MonoBehaviour
     public Transform BulletParent;
     public EntitiesScriptableObject PlayerBaseValues;
 
-    private int _health;
-    private int _healthMax = 100;
+    private float _health;
+    private float _healthMax = 100;
 
 
     [HideInInspector] public int NumberMaxAmmo = 2;
@@ -39,7 +40,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _health = PlayerBaseValues.Health;
+        _healthMax = PlayerBaseValues.Health;
+        _health = _healthMax;
     }
 
     // Update is called once per frame
@@ -140,6 +142,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_health > _healthMax)
             _health = _healthMax;
+        SliderLife.value = (_health / _healthMax);
     }
     private void Die()
     {
@@ -216,7 +219,7 @@ public class PlayerController : MonoBehaviour
         DamagePrincipal += value;
         DamageSecondaire += value;
     }
-    
+
 
 
 }

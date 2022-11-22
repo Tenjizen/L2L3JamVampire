@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class EnemyController : MonoBehaviour
 {
     //public float Speed = 4;
     public EntitiesScriptableObject EnemyBaseValues;
-
+    public Slider SliderLife;
     private GameObject _player;
     private Rigidbody2D _rb;
-
+    
     private float _timeForMove;
     private float _timerForMove;
     private Vector3 TargetPos;
@@ -24,8 +26,7 @@ public class EnemyController : MonoBehaviour
 
     public int NumberRushMax = 3;
     private int _numberRush = 0;
-    private int _health;
-    private int _healthMax = 100;
+    private float _health;
 
     private SpriteRenderer _spriteRenderer;
 
@@ -43,6 +44,7 @@ public class EnemyController : MonoBehaviour
         _health = EnemyBaseValues.Health;
         _timeForMove = EnemyBaseValues.TimeForMove;
         _spriteRenderer.sprite = EnemyBaseValues.Visuel;
+        UpdateLife();
     }
 
     public void Initialize(GameObject player)
@@ -70,7 +72,7 @@ public class EnemyController : MonoBehaviour
         {
             ILikeTrainAgain();
         }
-
+        UpdateLife();
         if (!EnemyBaseValues.ILikeTrain)
         {
             MoveToPlayer();
@@ -115,7 +117,11 @@ public class EnemyController : MonoBehaviour
     {
         _health -= damage;
     }
+    void UpdateLife()
+    {
+        SliderLife.value = _health / EnemyBaseValues.Health;
 
+    }
 
     private void ILikeTrainAgain()
     {

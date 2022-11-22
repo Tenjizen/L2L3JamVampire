@@ -6,7 +6,7 @@ using UnityEngine;
 public class EntitiesScriptableObject : ScriptableObject
 {
     public string Name;
-    public int Health;
+    public float Health;
     public int MoveSpeed;
     public int Damage;
     public float BonusScore;
