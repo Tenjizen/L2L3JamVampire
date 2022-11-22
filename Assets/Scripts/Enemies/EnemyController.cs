@@ -11,7 +11,8 @@ public class EnemyController : MonoBehaviour
     public Slider SliderLife;
     private GameObject _player;
     private Rigidbody2D _rb;
-    
+    private AnimatorControllerParameter _animation;
+
     private float _timeForMove;
     private float _timerForMove;
     private Vector3 TargetPos;
@@ -36,6 +37,7 @@ public class EnemyController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _animation = EnemyBaseValues.Animations[Random.Range(0, EnemyBaseValues.Animations.Count)]; 
     }
 
     // Start is called before the first frame update
@@ -76,6 +78,7 @@ public class EnemyController : MonoBehaviour
         if (!EnemyBaseValues.ILikeTrain)
         {
             MoveToPlayer();
+
         }
 
         if (_health <= 0)

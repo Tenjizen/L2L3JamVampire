@@ -15,4 +15,5 @@ public class EntitiesScriptableObject : ScriptableObject
     public GameObject BonusLoot;
     public bool ILikeTrain = false;
     public float TimeForMove;
+    public List<AnimatorControllerParameter> Animations; 
 }

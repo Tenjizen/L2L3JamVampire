@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public GameObject PrefabBullet;
     public Slider SliderLife;
 
+    public AnimatorScript Animator;
+    
     public float CoolDown = 0.2f;
     private float _timerCoolDownFirstShoot;
 
@@ -34,12 +36,14 @@ public class PlayerController : MonoBehaviour
     public float DamageSecondaire = 20;
     public float DamageKick = 15;
     Rigidbody2D _rb;
-
+    public SpriteRenderer _spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        //_spriteRenderer = GetComponent<SpriteRenderer>();
+        //Animator = GetComponent<AnimatorScript>();
         _healthMax = PlayerBaseValues.Health;
         _health = _healthMax;
     }
@@ -64,12 +68,13 @@ public class PlayerController : MonoBehaviour
     private void Imunitytimer()
     {
         _imunityTimer += Time.deltaTime;
-
+        _spriteRenderer.color = Color.gray;
         if (_imunityTimer < ImunityTime)
             return;
 
         _imunityTimer -= ImunityTime;
         _imunity = false;
+        _spriteRenderer.color = Color.white;
     }
 
     private void FirstShoot()
@@ -136,7 +141,16 @@ public class PlayerController : MonoBehaviour
     public void AddHealth(int life)
     {
         if (_health <= _healthMax)
+        {
             _health += life;
+            _spriteRenderer.color = Color.green;
+            StartCoroutine(ColorWhite());
+        }
+    }
+    IEnumerator ColorWhite()
+    {
+        yield return new WaitForSeconds(0.5f);
+        _spriteRenderer.color = Color.white;
     }
     public void UpdateLife()
     {
@@ -157,16 +171,27 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
+        if(horizontal > 0)
+        {
+            _spriteRenderer.flipX = true;
+        }
+        else if(horizontal < 0)
+        {
+            _spriteRenderer.flipX = false;
+        }
+
         Vector3 direction = new Vector2(horizontal, vertical);
 
         if (direction.sqrMagnitude > 0)
         {
             direction.Normalize();
             _rb.velocity = direction * PlayerBaseValues.MoveSpeed;
+            Animator.SetBool("Move", true);
         }
         else
         {
             _rb.velocity = Vector2.zero;
+            Animator.SetBool("Move", false);
         }
     }
 
@@ -179,6 +204,8 @@ public class PlayerController : MonoBehaviour
             {
                 _health -= enemy.EnemyBaseValues.Damage;
                 _imunity = true;
+                _spriteRenderer.color = Color.red;
+                StartCoroutine(ColorWhite());
             }
 
             if (enemy.EnemyBaseValues.ILikeTrain)

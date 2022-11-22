@@ -58,7 +58,7 @@ public class MainGameplay : MonoBehaviour
         FillAmoutXPBarre();
         if (_timerEnd <= 0 && _playerAlive)
         {
-            //print("Win");
+            print("Win");
         }
         else
             _timerEnd -= Time.deltaTime;
@@ -69,7 +69,8 @@ public class MainGameplay : MonoBehaviour
 
     private void UpdateText()
     {
-        TimerText.text = "" + Mathf.Round(_timerEnd * 100f) / 100f;
+        //TimerText.text = "" + Mathf.Round(_timerEnd * 100f) / 100f;
+        TimerText.text = "" + (int)_timerEnd;
         ScoreText.text = "Score : " + Score;
         AmmoText.text = "" + Player.GetComponent<PlayerController>().NumberCurrentAmmo + " / " + Player.GetComponent<PlayerController>().NumberMaxAmmo;
         LevelText.text = "LEVEL " + Level;
