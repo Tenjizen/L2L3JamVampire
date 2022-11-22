@@ -202,7 +202,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 65a9149adb187314bbeb33ba25f9ce98, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a8b0af0d42dc5742accdb907475f453, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -223,7 +223,7 @@ Animator:
   m_GameObject: {fileID: 5819284797015689186}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 231523ac92325274294f78d65c244507, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0be87c46df3e2da49a7ba5cad0a25c22, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -512,7 +512,7 @@ GameObject:
   - component: {fileID: 4727944546984906339}
   - component: {fileID: -969764978694549398}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyEnfant
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -547,7 +547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 083dac99c8b707143a39285845f0b23b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyBaseValues: {fileID: 11400000, guid: e4854a4678bfb2648aaeee2ad62b8034, type: 2}
+  EnemyBaseValues: {fileID: 11400000, guid: 3a0ec10a93b876044938ad57eb13cf17, type: 2}
   SliderLife: {fileID: 6456040699597290299}
   Animator: {fileID: 8027026088884519359}
   NumberRushMax: 3

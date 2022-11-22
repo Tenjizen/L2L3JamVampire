@@ -8,6 +8,7 @@ public class EnemiesGenerator : MonoBehaviour
     public Transform EnemiesParent;
 
     public float TimeSpawnNormal = 1;
+    public float TimeSpawnKids = 7;
     public float TimeSpawnGroup = 1;
     public float TimeSpawnReinhardt = 30;
     public int NumEnemies = 1;
@@ -15,6 +16,7 @@ public class EnemiesGenerator : MonoBehaviour
     public float RayCircle = 5.0f;
 
     private float _timer;
+    private float _timerKid;
     private float _timerGroup;
     private float _timerReinhardt;
 
@@ -30,6 +32,7 @@ public class EnemiesGenerator : MonoBehaviour
 
         timeSpawn();
         TimeReinhardt();
+        TimeKid();
 
     }
     public void UpdateAllTimer()
@@ -58,6 +61,15 @@ public class EnemiesGenerator : MonoBehaviour
         {
             _timerReinhardt -= TimeSpawnReinhardt;
             SpawnerEnemyReinhardt(NumEnemies);
+        }
+    }
+    public void TimeKid()
+    {
+        _timerKid += Time.deltaTime;
+        if (_timerKid > TimeSpawnKids)
+        {
+            _timerKid -= TimeSpawnKids;
+            SpawnerEnemyKid(NumEnemies);
         }
     }
 
@@ -95,6 +107,19 @@ public class EnemiesGenerator : MonoBehaviour
         {
             Vector3 pos = RandomCircle(center, RandomRayCircle);
             GameObject spawned = Instantiate(EnemiesPrefab[1], pos, Quaternion.identity, EnemiesParent);
+            spawned.GetComponent<EnemyController>().Initialize(MainGameplay.Instance.Player);
+            MainGameplay.Instance.Enemies.Add(spawned.GetComponent<EnemyController>());
+        }
+    }
+    public void SpawnerEnemyKid(int numberEnemies)
+    {
+        float RandomRayCircle = Random.Range(RayCircle + 2, RayCircle + 5);
+
+        Vector3 center = transform.position;
+        for (int i = 0; i < numberEnemies; i++)
+        {
+            Vector3 pos = RandomCircle(center, RandomRayCircle);
+            GameObject spawned = Instantiate(EnemiesPrefab[2], pos, Quaternion.identity, EnemiesParent);
             spawned.GetComponent<EnemyController>().Initialize(MainGameplay.Instance.Player);
             MainGameplay.Instance.Enemies.Add(spawned.GetComponent<EnemyController>());
         }
