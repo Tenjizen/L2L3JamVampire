@@ -38,8 +38,7 @@ public class MainGameplay : MonoBehaviour
     {
         if (_timerEnd <= 0 && _playerAlive)
         {
-            print("Win");
-            //ta perdu
+            //print("Win");
         }
         else
             _timerEnd -= Time.deltaTime;

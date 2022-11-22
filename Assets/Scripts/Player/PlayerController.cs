@@ -6,17 +6,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GameObject PrefabBullet;
-    //public float Speed = 5;
 
     public float CoolDown = 0.2f;
     private float _timerCoolDownFirstShoot;
-
 
     public Transform BulletParent;
     public EntitiesScriptableObject PlayerBaseValues;
 
     private int _health;
-
 
     [HideInInspector] public int NumberMaxAmmo = 2;
     public int NumberCurrentAmmo = 2;
@@ -25,6 +22,8 @@ public class PlayerController : MonoBehaviour
     public float CoolDownSecondShoot = 2.0f;
 
     public bool isAlive = true;
+    
+    
     // Start is called before the first frame update
     void Start()
     {

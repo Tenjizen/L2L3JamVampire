@@ -10,13 +10,16 @@ public class EnemyController : MonoBehaviour
     private GameObject _player;
     private Rigidbody2D _rb;
 
-    enum State
-    {
-        Waiting,
-        Moving
-    }
+    public float TimeForMove; //remonte
+    private float _timeForMove; //remonte
+    private Vector3 TargetDirection;
+    //enum State
+    //{
+    //    Waiting,
+    //    Moving
+    //}
 
-    State _state = State.Waiting;
+    //State _state = State.Waiting;
 
 
     private int _health;
@@ -41,19 +44,26 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ( _state == State.Waiting )
-        {
+        //if (_state == State.Waiting)
+        //{
+        //    _timeForMove += Time.deltaTime;
 
-
-        }
+        //    if (_timeForMove >= TimeForMove)
+        //    {
+        //        TargetDirection = _player.transform.position - transform.position;
+        //        TargetDirection.z = 0;
+        //        _timeForMove -= TimeForMove;
+        //        _state = State.Moving;
+        //    }
+        //}
+        //if (_state == State.Moving)
+        //{
+        //    ILikeTrainAgain();
+        //}
 
         if (!EnemyBaseValues.ILikeTrain)
         {
             MoveToPlayer();
-        }
-        else
-        {
-            ILikeTrainAgain();
         }
 
     }
@@ -75,33 +85,20 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public float TimeForMove; //remonte
-    private float _timeForMove; //remonte
-    private Vector3 TargetDirection;
-    private void ILikeTrainAgain()
-    {
-        _timeForMove += Time.deltaTime;
-
-        if (_timeForMove >= TimeForMove)
-        {
-            
-
-
-            TargetDirection = _player.transform.position - transform.position;
-            TargetDirection.z = 0;
-            _timeForMove -= TimeForMove;
-
-            if (TargetDirection.magnitude > 0.1f)
-            {
-                TargetDirection.Normalize();
-                _rb.velocity = TargetDirection * EnemyBaseValues.MoveSpeed;
-            }
-            else
-            {
-                _rb.velocity = Vector2.zero;
-            }
-        }
-    }
+    //private void ILikeTrainAgain()
+    //{
+    //    print(TargetDirection.magnitude);   
+    //    if (TargetDirection.magnitude > 0.1f)
+    //    {
+    //        TargetDirection.Normalize();
+    //        _rb.velocity = TargetDirection * EnemyBaseValues.MoveSpeed;
+    //    }
+    //    else
+    //    {
+    //        _rb.velocity = Vector2.zero;
+    //        _state = State.Waiting;
+    //    }
+    //}
 
     //private void OnCollisionEnter(Collision collision)
     //{
