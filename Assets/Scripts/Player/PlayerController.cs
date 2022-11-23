@@ -243,7 +243,6 @@ public class PlayerController : MonoBehaviour
     {
         Time.timeScale = 1;
         MainGameplay.Instance.CanvasLvlUp.SetActive(false);
-
     }
     public void BonusFireRat(float time)
     {
@@ -258,8 +257,8 @@ public class PlayerController : MonoBehaviour
     public void BonusLife(int value)
     {
         LvlUp();
-        _healthMax += value;
-        _health += value;
+        //_healthMax += value;
+        AddHealth(value);
     }
     public void BonusDegats(int value)
     {
