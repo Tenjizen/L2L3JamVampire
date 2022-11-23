@@ -43186,6 +43186,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1613163710447345984, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9dea2113976e9c14abd73e2053acef8b, type: 3}
+    - target: {fileID: 1613163710447345984, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613163710447345984, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613163710447345984, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3361374746114045968, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -43328,7 +43344,7 @@ PrefabInstance:
       objectReference: {fileID: 337770151}
     - target: {fileID: 7933120324562890842, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
       propertyPath: m_SortingOrder
-      value: 50
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 7933120324562890843, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
       propertyPath: m_Pivot.x
@@ -43413,6 +43429,54 @@ PrefabInstance:
     - target: {fileID: 7933120324562890843, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126972274364610853, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c613ad17446d3d64aa423e113f1c0a1b, type: 3}
+    - target: {fileID: 8126972274364610853, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126972274364610853, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126972274364610853, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126972275122876221, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ab28ea85301c73d45bb8d8136862270e, type: 3}
+    - target: {fileID: 8126972275122876221, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126972275122876221, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126972275122876221, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126972275755605853, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 99bccabde6299a1449fde076a6298f2d, type: 3}
+    - target: {fileID: 8126972275755605853, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126972275755605853, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126972275755605853, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4af8f97bb7423a349a09b9cf437ba4bc, type: 3}
